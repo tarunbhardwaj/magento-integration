@@ -87,3 +87,23 @@ class OrderConfig(API):
                          ]
         """
         return self.call('sales_order.shipping_methods', [])
+
+
+class Catalog(API):
+    '''
+    Catalog from magento
+    '''
+
+    def get_root_category(self):
+        """
+        Get root category.
+
+        :return: dictionary of the root category
+                 Example :
+                         {
+                             'id': '2',
+                             'name': 'Root Category Name',
+                             'description': 'category description',
+                         }
+        """
+        return self.call('catalog_product.root_category', [])
